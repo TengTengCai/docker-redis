@@ -1,0 +1,19 @@
+version: '3'
+services:
+  redis:
+    build: .
+    restart: always
+    ports:
+     - "6379:6379"
+  admin:
+    image: "erikdubbelboer/phpredisadmin:v1.11.0"
+    links:
+      - redis
+    environment:
+      - ADMIN_USER=root
+      - ADMIN_PASS=root
+      - REDIS_1_HOST=redis
+      - REDIS_1_PORT=6379
+      - REDIS_1_AUTH=root
+    ports:
+      - "10086:80"
