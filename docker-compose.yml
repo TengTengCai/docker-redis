@@ -16,4 +16,4 @@ services:
       - REDIS_1_PORT=6379
       - REDIS_1_AUTH=root
     ports:
-      - "10086:80"
+      - "6378:80"
