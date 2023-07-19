@@ -7,6 +7,7 @@ services:
      - "6379:6379"
   admin:
     image: "erikdubbelboer/phpredisadmin:v1.11.0"
+    restart: always
     links:
       - redis
     environment:
